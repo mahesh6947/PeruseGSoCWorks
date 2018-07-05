@@ -6,9 +6,8 @@ import QtQuick.Window 2.0
 
 
 ToolBar {
-    id: root
+    id: tool
     objectName: "toolbar"
-
 
     property Project  project
     property ImageCanvas canvas

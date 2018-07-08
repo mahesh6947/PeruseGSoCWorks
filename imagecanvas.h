@@ -9,7 +9,11 @@
 #include"include/QtCore/QLoggingCategory"
 
 
-Q_DECLARE_LOGGING_CATEGORY(lcImageCanvas)
+Q_DECLARE_LOGGING_CATEGORY(lcImageCanvas);
+class ImageProject;
+class Project;
+class Tile;
+class Tileset;
 
 class ImageCanvas : public QQuickPaintedItem
 {
@@ -29,6 +33,15 @@ public:
 
   ImageCanvas();
   ~ImageCanvas();
+
+  Project *project() const;
+  void setProject(Project *project);
+
+  int cursorX() const;
+  void setCursorX(int cursorX);
+
+  int cursorY() const;
+  void setCursorY(int cursorY);
 
   QColor cursorPixelColour() const;
 

@@ -63,3 +63,21 @@ void LayeredImageCanvas::replaceImage(int layerIndex, const QImage &replacementI
     *mLayeredImageProject->layerAt(layerIndex)->image() = replacementImage;
     update();
 }
+void LayeredImageCanvas::onLayerOpacityChanged()
+{
+    ImageLayer *layer = qobject_cast<ImageLayer*>(sender());
+    Q_ASSERT(layer);
+    if (layer->isVisible())
+        update();
+}
+
+void LayeredImageCanvas::onPreCurrentLayerChanged()
+{
+
+    if (mHasMovedSelection)
+        confirmSelectionMove();
+    else if (mIsSelectionFromPaste)
+        confirmPasteSelection();
+    else
+        clearSelection();
+}

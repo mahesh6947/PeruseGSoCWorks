@@ -27,6 +27,9 @@ signals:
 
 
     void creationFailed(const QString &errorMessage);
+    
+    
+    
 
 public slots:
     void onCreationFailed(const QString &errorMessage);

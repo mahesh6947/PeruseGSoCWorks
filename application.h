@@ -1,4 +1,4 @@
-#ifndef APPLICATION_H
+
 #define APPLICATION_H
 
 #include<QGuiApplication>
@@ -17,7 +17,7 @@ public:
 
     //ApplicationSettings *settings() const;
      QQmlApplicationEngine *qmlEngine() const;
-     ProjectManger *projectManager();
+     ProjectManager *projectManager();
 
 private:
     QScopedPointer<QGuiApplication> mApplication;

@@ -4,13 +4,21 @@
 #include <QObject>>
 #include <QScopedPointer>
 
-class ProjectManger : public QObject
+
+class ApplicationSettings;
+
+class ProjectManager : public QObject
 {
 
+ Q_OBJECT
+    Q_PROPERTY(ApplicationSettings *applicationSettings READ applicationSettings
+        WRITE setApplicationSettings NOTIFY applicationSettingsChanged)
+    Q_PROPERTY(bool ready READ isReady NOTIFY readyChanged)
 
 public:
     explicit ProjectManager(QObject *parent = 0);
     ~ProjectManager();
+
 
   //  Project *project() const;
 
@@ -36,7 +44,7 @@ public slots:
     void projectUrlChanged();
 
 
-}
+};
 
 
 #endif // PROJECTMANAGER_H

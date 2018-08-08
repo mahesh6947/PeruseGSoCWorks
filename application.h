@@ -6,6 +6,7 @@
 #include <QtQml>
 
 #include "projectmanager.h"
+#include "applicationsettings.h"
 
 class Application
 {
@@ -15,13 +16,13 @@ public:
 
     int run();
 
-    //ApplicationSettings *settings() const;
+   ApplicationSettings *settings() const;
      QQmlApplicationEngine *qmlEngine() const;
      ProjectManager *projectManager();
 
 private:
     QScopedPointer<QGuiApplication> mApplication;
-   // QScopedPointer<ApplicationSettings> mSettings;
+    QScopedPointer<ApplicationSettings> mSettings;
     QScopedPointer<QQmlApplicationEngine> mEngine;
     ProjectManager mProjectManager;
 };
